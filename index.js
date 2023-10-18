@@ -14,13 +14,13 @@ mongoose
   });
 
 // const productRoutes = require('./routes/product');
-// const userRoutes = require('./routes/users');
+const authRoutes = require('./routes/auth');
 
 // app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser.json());
 // app.use('/api/products', productRoutes);
-// app.use('/api/users', userRoutes);
+app.use('/api/auth', authRoutes);
 
 app.listen(process.env.APP_PORT, () => {
-  console.log(`Running on port 4343`);
+  console.log(`Running on port ${process.env.APP_PORT}`);
 });
