@@ -1,8 +1,7 @@
-exports.generateResponse = (status, message, code, data) => {
+exports.generateResponse = (status, message, data) => {
   let response = {
     status: status,
     message: message,
-    code: code,
     data: data,
   };
   return response;

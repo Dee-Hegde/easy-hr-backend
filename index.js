@@ -3,6 +3,9 @@ const app = express();
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 dotenv.config();
+const cors = require('cors');
+app.use(cors());
+app.use(express.json());
 //
 mongoose
   .connect(process.env.DB_URL)
@@ -13,12 +16,8 @@ mongoose
     console.log(err);
   });
 
-// const productRoutes = require('./routes/product');
 const authRoutes = require('./routes/auth');
 
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json());
-// app.use('/api/products', productRoutes);
 app.use('/api/auth', authRoutes);
 
 app.listen(process.env.APP_PORT, () => {
